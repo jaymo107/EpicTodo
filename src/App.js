@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Card, Container, Grid } from 'semantic-ui-react'
+import TodoList from './components/TodoList';
 import './App.css';
+import { TodosProvider } from './providers/TodosProvider';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodosProvider>
+      <Container>
+        <Grid>
+          <Grid.Row centered>
+            <Grid.Column width={8}>
+              <Card fluid>
+                <Card.Content header='My Todos' />
+                <Card.Content>
+                  <TodoList />
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
+    </TodosProvider>
   );
 }
 
