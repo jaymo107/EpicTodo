@@ -1,11 +1,7 @@
 html { 
-  margin-top: 30px;
+  padding-top: 30px;
 }
 
 .strikethrough {
   text-decoration: line-through
-}
-
-div.ui.checkbox:nth-child(1) {
-  margin-top: 12px;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, Grid } from 'semantic-ui-react'
+import { Card, Container, Grid, Segment } from 'semantic-ui-react'
 import TodoList from './components/TodoList';
 import './App.css';
 import { TodosProvider } from './providers/TodosProvider';
@@ -11,12 +11,9 @@ function App() {
         <Grid>
           <Grid.Row centered>
             <Grid.Column width={8}>
-              <Card fluid>
-                <Card.Content header='My Todos' />
-                <Card.Content>
-                  <TodoList />
-                </Card.Content>
-              </Card>
+              <Segment padded='very' color='teal'>
+                <TodoList />
+              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>

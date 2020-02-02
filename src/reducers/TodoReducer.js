@@ -16,11 +16,7 @@ const saveToStorage = (state) => {
 };
 
 const addTodo = (state, { todo }) => {
-  if (!todo.length) {
-    return [...state];
-  }
-
-  if (getTodoIndex(state, todo) > -1) {
+  if (!todo.length || getTodoIndex(state, todo) > -1) {
     return [...state];
   }
 
