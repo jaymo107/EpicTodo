@@ -31,6 +31,7 @@ const TodoItem = ({ todo }) => {
         <Form onSubmit={editTodo}>
           <Form.Field>
             <input
+              focus
               value={todoName}
               onChange={(e) => setTodoName(e.currentTarget.value)}
             />
@@ -57,7 +58,7 @@ const TodoItem = ({ todo }) => {
         {renderTodo()}
       </Grid.Column>
       <Grid.Column>
-        <Button.Group floated='right'>
+        <Button.Group floated='right' basic size='small'>
           <Button icon='edit' onClick={() => setEditing(!editing)} />
           <Button icon='delete' onClick={
             () => dispatch({ type: REMOVE_TODO, todo: todo.name })

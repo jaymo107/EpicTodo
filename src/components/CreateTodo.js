@@ -18,14 +18,20 @@ const CreateTodo = props => {
       <Form.Group widths='equal'>
         <Form.Field>
           <Input
-            value={todo}
-            fluid
+            action={{
+              color: 'teal',
+              labelPosition: 'left',
+              icon: 'add',
+              content: 'Add',
+            }}
+            actionPosition='right'
+            placeholder='Add'
             placeholder='Go shopping...'
             onChange={(e, { value }) => setTodo(value)}
+            value={todo}
+            focus
+            fluid
           />
-        </Form.Field>
-        <Form.Field>
-          <Form.Button content='Add' />
         </Form.Field>
       </Form.Group>
     </Form>

@@ -27,13 +27,12 @@ const TodoList = props => {
 
   return (
     <Grid container columns={2}>
-      {renderTodos()}
-
       <Grid.Row>
         <Grid.Column width={16}>
           <CreateTodo />
         </Grid.Column>
       </Grid.Row>
+      {renderTodos()}
     </Grid>
   );
 };
