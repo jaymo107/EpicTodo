@@ -25,7 +25,6 @@ const CreateTodo = props => {
               content: 'Add',
             }}
             actionPosition='right'
-            placeholder='Add'
             placeholder='Go shopping...'
             onChange={(e, { value }) => setTodo(value)}
             value={todo}

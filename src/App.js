@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, Grid, Segment } from 'semantic-ui-react'
+import { Container, Grid, Segment } from 'semantic-ui-react'
 import TodoList from './components/TodoList';
 import './App.css';
 import { TodosProvider } from './providers/TodosProvider';
