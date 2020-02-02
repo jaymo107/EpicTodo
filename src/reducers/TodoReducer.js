@@ -15,8 +15,13 @@ const saveToStorage = (state) => {
   return [...state];
 };
 
+const isTodoValid = (state, name) => {
+  return name.trim().length
+    || getTodoIndex(state, name) > -1;
+};
+
 const addTodo = (state, { todo }) => {
-  if (!todo.length || getTodoIndex(state, todo) > -1) {
+  if (!isTodoValid(state, todo)) {
     return [...state];
   }
 
@@ -43,12 +48,11 @@ const removeTodo = (state, { todo }) => {
 };
 
 const editTodo = (state, { todo, newName} ) => {
-  if (getTodoIndex(state, newName) > -1) {
+  if (!isTodoValid(state, newName)) {
     return [...state];
   }
 
   const index = getTodoIndex(state, todo);
-
   const { done } = state[index];
 
   state[index] = { name: newName, done };
